@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ujowovbiqxb"]
+
+[ext_resource type="Script" path="res://scripts/objects/blackblock.gd" id="1_18nii"]
+[ext_resource type="Texture2D" uid="uid://dgojbk24ojmfc" path="res://assets/tileset/Dungeon Tile Set.png" id="1_jkeyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh64u"]
+size = Vector2(16, 16)
+
+[node name="blackblock" type="Node2D"]
+script = ExtResource("1_18nii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jkeyq")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dh64u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

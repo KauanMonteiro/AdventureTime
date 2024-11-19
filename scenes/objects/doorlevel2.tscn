@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://65dv18bjidr1"]
+
+[ext_resource type="Texture2D" uid="uid://0rplgqpo8gv8" path="res://assets/tileset/Sprites/11-Door/Idle.png" id="1_gllgi"]
+[ext_resource type="Texture2D" uid="uid://1t8fxfil4cvu" path="res://assets/tileset/Sprites/11-Door/Opening (46x56).png" id="2_0v7t2"]
+[ext_resource type="Script" path="res://scripts/objects/doorlevel2.gd" id="3_1auae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsfk1"]
+atlas = ExtResource("1_gllgi")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ont1"]
+atlas = ExtResource("2_0v7t2")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gaiv"]
+atlas = ExtResource("2_0v7t2")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnv5c"]
+atlas = ExtResource("2_0v7t2")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7rbo"]
+atlas = ExtResource("2_0v7t2")
+region = Rect2(138, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wixfd"]
+atlas = ExtResource("2_0v7t2")
+region = Rect2(184, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oynof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsfk1")
+}],
+"loop": true,
+"name": &"idlers",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ont1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gaiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnv5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7rbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wixfd")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k08os"]
+size = Vector2(47, 56)
+
+[node name="doorlevel2" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_oynof")
+animation = &"open"
+frame = 1
+frame_progress = 0.452738
+script = ExtResource("3_1auae")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_k08os")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

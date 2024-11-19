@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqhkqtu0woxe3"]
+
+[ext_resource type="Texture2D" uid="uid://carl0j0segtd7" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="1_3pyxx"]
+[ext_resource type="Script" path="res://scripts/objects/upgrade_chest.gd" id="1_gjt2m"]
+[ext_resource type="Texture2D" uid="uid://nnqkmpvam8yr" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 01.png" id="2_6xj01"]
+[ext_resource type="Texture2D" uid="uid://bfpioftcsl5gk" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 02.png" id="3_uf4iw"]
+[ext_resource type="Texture2D" uid="uid://icj645ouf8p" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 03.png" id="4_futkj"]
+[ext_resource type="Texture2D" uid="uid://kuf4kfblgglh" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 04.png" id="5_pdvds"]
+[ext_resource type="Texture2D" uid="uid://botqnn2kum22f" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 05.png" id="6_elh5l"]
+[ext_resource type="Texture2D" uid="uid://4atunidhius3" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 06.png" id="7_0wm6w"]
+[ext_resource type="Texture2D" uid="uid://c4w3ohyc3646c" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 07.png" id="8_81qtw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idaun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3pyxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6xj01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uf4iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_futkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pdvds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_elh5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0wm6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_81qtw")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqg46"]
+size = Vector2(30, 27)
+
+[node name="upgrade chest" type="Node2D"]
+script = ExtResource("1_gjt2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_idaun")
+animation = &"open"
+frame = 6
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_aqg46")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

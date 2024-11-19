@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://14ccywxxlr2g"]
+
+[ext_resource type="Script" path="res://scripts/objects/death_block.gd" id="1_6kh3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yug1i"]
+
+[node name="Death block" type="Area2D"]
+script = ExtResource("1_6kh3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yug1i")
+debug_color = Color(0.918636, 6.54578e-05, 0.701414, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

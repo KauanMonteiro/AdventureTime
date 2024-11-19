@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cw26ywtysnowm"]
+
+[ext_resource type="Script" path="res://scripts/objects/breakable_block.gd" id="1_brkuy"]
+[ext_resource type="Texture2D" uid="uid://bkdqy1f4miex2" path="res://assets/objects/traps/Brick1.png" id="1_yhdr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt47v"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v34ty"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2uhw"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn3hd"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4bha"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pq4o"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqtty"]
+atlas = ExtResource("1_yhdr7")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcino"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt47v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v34ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2uhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn3hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4bha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pq4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqtty")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc1qp"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_brkuy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bcino")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mc1qp")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

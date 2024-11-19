@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukuym1tk7s2v"]
+
+[ext_resource type="FontFile" uid="uid://n3grf0cs58n8" path="res://assets/font/RevMiniPixel.ttf" id="1_vuj8g"]
+[ext_resource type="Script" path="res://scripts/Interface/pause_menu.gd" id="1_yqmjj"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_yqmjj")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vuj8g")
+theme_override_font_sizes/font_size = 40
+text = "RESUME"
+
+[node name="reset_btn2" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vuj8g")
+theme_override_font_sizes/font_size = 40
+text = "RESET"
+
+[node name="quit_btn2" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vuj8g")
+theme_override_font_sizes/font_size = 40
+text = "QUIT GAME"
+
+[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/reset_btn2" to="." method="_on_reset_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/quit_btn2" to="." method="_on_quit_btn_2_pressed"]

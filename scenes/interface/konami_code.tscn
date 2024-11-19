@@ -1,0 +1,178 @@
+[gd_scene load_steps=4 format=3 uid="uid://vc8qqt5e03ek"]
+
+[ext_resource type="Script" path="res://scripts/Interface/konami_code_select.gd" id="1_eu605"]
+[ext_resource type="FontFile" uid="uid://n3grf0cs58n8" path="res://assets/font/RevMiniPixel.ttf" id="1_pehmg"]
+[ext_resource type="PackedScene" uid="uid://c2cqrn47jv0eg" path="res://scenes/interface/transition.tscn" id="3_e27pw"]
+
+[node name="KonamiCode" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_eu605")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fase 1" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 1"
+
+[node name="fase 2" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 2"
+
+[node name="fase 3" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 3
+"
+
+[node name="fase 4" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 4"
+
+[node name="fase 5" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 5"
+
+[node name="fase 6A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 6A"
+
+[node name="fase 6B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 6B
+"
+
+[node name="fase 6C" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 6C"
+
+[node name="fase 7A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 7A"
+
+[node name="fase 7B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 7B"
+
+[node name="fase 8A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 8A"
+
+[node name="fase 8B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 8B"
+
+[node name="fase 9A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 9A"
+
+[node name="fase 9B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 9B"
+
+[node name="fase 10A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 10A"
+
+[node name="fase 10B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 10B"
+
+[node name="fase 11A" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 11A"
+
+[node name="fase 11B" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pehmg")
+theme_override_font_sizes/font_size = 40
+text = "Fase 11B"
+
+[node name="transition" parent="." instance=ExtResource("3_e27pw")]
+
+[connection signal="pressed" from="menu_holder/fase 1" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="menu_holder/fase 2" to="." method="_on_reset_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 2" to="." method="_on_fase_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 3" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 3" to="." method="_on_fase_3_pressed"]
+[connection signal="pressed" from="menu_holder/fase 4" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 4" to="." method="_on_fase_4_pressed"]
+[connection signal="pressed" from="menu_holder/fase 5" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 5" to="." method="_on_fase_5_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6A" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6A" to="." method="_on_fase_6a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6B" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6B" to="." method="_on_fase_6b_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6C" to="." method="_on_quit_btn_2_pressed"]
+[connection signal="pressed" from="menu_holder/fase 6C" to="." method="_on_fase_6c_pressed"]
+[connection signal="pressed" from="menu_holder/fase 7A" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 7A" to="." method="_on_fase_7a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 7B" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 7B" to="." method="_on_fase_7b_pressed"]
+[connection signal="pressed" from="menu_holder/fase 8A" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 8A" to="." method="_on_fase_8a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 8B" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 8B" to="." method="_on_fase_8b_pressed"]
+[connection signal="pressed" from="menu_holder/fase 9A" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 9A" to="." method="_on_fase_9a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 9B" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 9B" to="." method="_on_fase_9b_pressed"]
+[connection signal="pressed" from="menu_holder/fase 10A" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 10A" to="." method="_on_fase_10a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 10B" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 10B" to="." method="_on_fase_10b_pressed"]
+[connection signal="pressed" from="menu_holder/fase 11A" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 11A" to="." method="_on_fase_11a_pressed"]
+[connection signal="pressed" from="menu_holder/fase 11B" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/fase 11B" to="." method="_on_fase_11b_pressed"]
+
+[editable path="transition"]

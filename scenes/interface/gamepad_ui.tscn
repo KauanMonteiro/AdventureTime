@@ -1,0 +1,144 @@
+[gd_scene load_steps=20 format=3 uid="uid://bdiw3u0vnv75x"]
+
+[ext_resource type="Texture2D" uid="uid://cbs6mump6dn2c" path="res://assets/UI/gdb-xbox-2.png" id="1_lysyx"]
+[ext_resource type="Script" path="res://scripts/Interface/gamepad_ui.gd" id="3_qu1rn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4fjj"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(480, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvr0y"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(496, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrdm8"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(512, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75jmh"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(528, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc1pt"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(480, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i72i2"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(496, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5qny"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(512, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bg8s"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(528, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdxv4"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(480, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1oc"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(496, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6biy5"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(512, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy82c"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(528, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ty7"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(368, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cttd1"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(384, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy2cm"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(400, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76qc0"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(416, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mbi3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4fjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvr0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrdm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75jmh")
+}],
+"loop": true,
+"name": &"A",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc1pt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i72i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5qny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bg8s")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdxv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6biy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy82c")
+}],
+"loop": true,
+"name": &"X",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54ty7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cttd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy2cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76qc0")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 7.0
+}]
+
+[node name="Gamepad UI" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8mbi3")
+animation = &"A"
+script = ExtResource("3_qu1rn")

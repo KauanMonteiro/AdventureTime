@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjtje8aasjing"
+path="res://.godot/imported/219942_qubodup_demon-cant-wait-to-drink-your-blood (online-audio-converter.com).mp3-4186b26104f96429235ee6c2402df5ce.mp3str"
+
+[deps]
+
+source_file="res://sound/219942_qubodup_demon-cant-wait-to-drink-your-blood (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/219942_qubodup_demon-cant-wait-to-drink-your-blood (online-audio-converter.com).mp3-4186b26104f96429235ee6c2402df5ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

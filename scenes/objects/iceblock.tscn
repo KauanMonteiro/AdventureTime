@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpqrx6lfhgeef"]
+
+[ext_resource type="Script" path="res://scripts/objects/secret_block.gd" id="1_lbl65"]
+[ext_resource type="Texture2D" uid="uid://bqad4bvfk5tcu" path="res://assets/tileset/Snow platform tileset.png" id="2_dtl41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jte1k"]
+size = Vector2(8, 8)
+
+[node name="iceblock" type="StaticBody2D"]
+script = ExtResource("1_lbl65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dtl41")
+region_enabled = true
+region_rect = Rect2(0, 24, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jte1k")

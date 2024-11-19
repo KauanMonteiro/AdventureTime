@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://dfevvjmthoae8"]
+
+[ext_resource type="Texture2D" uid="uid://c3xr60sw4expf" path="res://assets/objects/traps/Suriken.png" id="1_33wqi"]
+[ext_resource type="Script" path="res://scripts/objects/suriken_moving.gd" id="1_62dcv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx7kj"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4ggw"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og0q5"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dm75"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3r0i"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmgy8"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ych"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hc00"]
+atlas = ExtResource("1_33wqi")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmqwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx7kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4ggw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og0q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dm75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3r0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmgy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ych")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hc00")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpbih"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5aft"]
+radius = 16.0312
+
+[node name="suriken_moving" type="Node2D"]
+script = ExtResource("1_62dcv")
+
+[node name="suriken" type="AnimatableBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="suriken"]
+sprite_frames = SubResource("SpriteFrames_jmqwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suriken"]
+shape = SubResource("CircleShape2D_tpbih")
+
+[node name="Area2D" type="Area2D" parent="suriken"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suriken/Area2D"]
+shape = SubResource("CircleShape2D_d5aft")
+debug_color = Color(0.90858, 0.000115899, 0.73625, 0.42)
+
+[connection signal="body_entered" from="suriken/Area2D" to="." method="_on_area_2d_body_entered"]

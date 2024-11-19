@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coc3ennhbh8nt"
+path="res://.godot/imported/2024-10-31 15-26-44 (online-audio-converter.com).mp3-be7ac28a5149302b46b8d037e2d31613.mp3str"
+
+[deps]
+
+source_file="res://sound/2024-10-31 15-26-44 (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/2024-10-31 15-26-44 (online-audio-converter.com).mp3-be7ac28a5149302b46b8d037e2d31613.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

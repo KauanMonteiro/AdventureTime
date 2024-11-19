@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwu3o6rpp1c20"]
+
+[ext_resource type="Texture2D" uid="uid://xhltn34gabwi" path="res://assets/tileset/ukipthl42lk11.png" id="1_kawjd"]
+[ext_resource type="FontFile" uid="uid://n3grf0cs58n8" path="res://assets/font/RevMiniPixel.ttf" id="1_l36a8"]
+[ext_resource type="Script" path="res://scripts/Interface/title_screen.gd" id="1_ut6by"]
+[ext_resource type="Texture2D" uid="uid://ducaxoaeb8u7q" path="res://assets/tileset/f4b5a712685445.5626b838817d0.png" id="2_72xkb"]
+[ext_resource type="AudioStream" uid="uid://b5lq5e5nu1m6e" path="res://sound/menu.mp3" id="5_u0ajb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu365"]
+bg_color = Color(0.6, 0.6, 0.6, 0.607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn7dk"]
+bg_color = Color(0.6, 0.6, 0.6, 0.607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bu8p"]
+bg_color = Color(0.6, 0.6, 0.6, 0.607843)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ut6by")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kawjd")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_72xkb")
+
+[node name="start_bnt" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.457333, 0.630597, 1, 1)
+theme_override_fonts/font = ExtResource("1_l36a8")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_uu365")
+text = "START"
+
+[node name="credits_bnt" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_l36a8")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_pn7dk")
+text = "CREDITS"
+
+[node name="quit_bnt" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_l36a8")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_1bu8p")
+text = "QUIT GAME"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_u0ajb")
+volume_db = 1.0
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_bnt" to="." method="_on_start_bnt_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_bnt" to="." method="_on_quit_bnt_pressed"]

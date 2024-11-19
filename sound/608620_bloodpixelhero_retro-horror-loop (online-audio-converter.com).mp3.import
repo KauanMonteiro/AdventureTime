@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de8d5vxwjdusr"
+path="res://.godot/imported/608620_bloodpixelhero_retro-horror-loop (online-audio-converter.com).mp3-f177354c6e05c7eafca986ac6a7ec167.mp3str"
+
+[deps]
+
+source_file="res://sound/608620_bloodpixelhero_retro-horror-loop (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/608620_bloodpixelhero_retro-horror-loop (online-audio-converter.com).mp3-f177354c6e05c7eafca986ac6a7ec167.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

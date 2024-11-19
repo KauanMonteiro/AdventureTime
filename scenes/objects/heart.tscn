@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6kratjh6egky"]
+
+[ext_resource type="Texture2D" uid="uid://cx6gcf0axtxf6" path="res://assets/tileset/Sprites/12-Live and Coins/Big Heart Idle (18x14).png" id="1_mccqn"]
+[ext_resource type="Script" path="res://scripts/objects/heart.gd" id="2_rqpey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4xoc"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14pe"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(18, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urjj6"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(36, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgg1r"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(54, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onddu"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(72, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ftta"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(90, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bknai"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(108, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x32bw"]
+atlas = ExtResource("1_mccqn")
+region = Rect2(126, 0, 18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2bht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4xoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l14pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urjj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgg1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onddu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ftta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bknai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x32bw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm5pn"]
+size = Vector2(12, 11.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_u2bht")
+frame_progress = 0.467132
+script = ExtResource("2_rqpey")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 0.75)
+shape = SubResource("RectangleShape2D_cm5pn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

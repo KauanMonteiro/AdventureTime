@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0mmravurvo5u"]
+
+[ext_resource type="Script" path="res://scripts/objects/bosslevel_10b.gd" id="1_1ig6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t3du"]
+
+[node name="bosslevel10B" type="Area2D"]
+script = ExtResource("1_1ig6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5t3du")
+debug_color = Color(1, 0.187921, 0.380683, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

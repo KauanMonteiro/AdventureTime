@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://mhhvvnfb5bf8"]
+
+[ext_resource type="Texture2D" uid="uid://c8isnqw20u0v4" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_5ncw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81f"]
+size = Vector2(16, 16)
+
+[node name="block2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ncw7")
+region_enabled = true
+region_rect = Rect2(160, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dl81f")

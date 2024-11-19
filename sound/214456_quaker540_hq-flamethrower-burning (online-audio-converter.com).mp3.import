@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br6ycynkyo6p7"
+path="res://.godot/imported/214456_quaker540_hq-flamethrower-burning (online-audio-converter.com).mp3-eccb5834ee39983881e0a4d583936082.mp3str"
+
+[deps]
+
+source_file="res://sound/214456_quaker540_hq-flamethrower-burning (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/214456_quaker540_hq-flamethrower-burning (online-audio-converter.com).mp3-eccb5834ee39983881e0a4d583936082.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

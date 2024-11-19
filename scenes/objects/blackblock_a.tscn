@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwduha12o7v8f"]
+
+[ext_resource type="Script" path="res://scripts/objects/blackblock.gd" id="1_ur3c2"]
+[ext_resource type="Texture2D" uid="uid://bm71pa1wsowcn" path="res://assets/tileset/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_wu7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh64u"]
+size = Vector2(16, 16)
+
+[node name="blackblock_A" type="Node2D"]
+script = ExtResource("1_ur3c2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wu7tw")
+region_enabled = true
+region_rect = Rect2(40, 40, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dh64u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

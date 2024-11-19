@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6s2oo5aki4nq"]
+
+[ext_resource type="Texture2D" uid="uid://br2slo6vt5nfa" path="res://assets/objects/FlyingObelisk_no_lightnings_no_letter.png" id="1_4xigl"]
+[ext_resource type="Script" path="res://scripts/objects/checkpoint_obelisk.gd" id="2_vevkc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg7wo"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(0, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f17a"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckxvf"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o00nr"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0u0t"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lxoa"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(1000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gujgi"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(1200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l0cg"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(1400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3l1o"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(1600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n7li"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(1800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbrw1"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(2000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2imuh"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(2200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vluo"]
+atlas = ExtResource("1_4xigl")
+region = Rect2(2400, 0, 200, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mnbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg7wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f17a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckxvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o00nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0u0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lxoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gujgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l0cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3l1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n7li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbrw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2imuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vluo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wap68"]
+size = Vector2(107, 362)
+
+[node name="checkpointObelisk" type="AnimatedSprite2D"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_8mnbk")
+frame_progress = 0.694568
+script = ExtResource("2_vevkc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.5, 10)
+shape = SubResource("RectangleShape2D_wap68")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
