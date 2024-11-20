@@ -296,3 +296,5 @@ position = Vector2(10, 11)
 shape = SubResource("RectangleShape2D_iqbav")
 disabled = true
 debug_color = Color(0.918777, 6.50728e-05, 0.700905, 0.42)
+
+[connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]

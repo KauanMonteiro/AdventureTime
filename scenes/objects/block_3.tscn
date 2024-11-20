@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ldynbhbyg5y"]
+[gd_scene load_steps=4 format=3 uid="uid://5ldynbhbyg5y"]
 
 [ext_resource type="Texture2D" uid="uid://bqad4bvfk5tcu" path="res://assets/tileset/Snow platform tileset.png" id="1_req4k"]
+[ext_resource type="Script" path="res://scripts/objects/block_3.gd" id="1_ujjw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1wtl"]
 size = Vector2(40, 20.5)
 
 [node name="block3" type="StaticBody2D"]
 position = Vector2(7014, 62)
+script = ExtResource("1_ujjw1")
 
 [node name="SnowPlatformTileset" type="Sprite2D" parent="."]
 position = Vector2(-7014, -56)

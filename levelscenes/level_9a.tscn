@@ -555,7 +555,7 @@ position = Vector2(1275, 193)
 position = Vector2(369, 128.141)
 
 [node name="blackblock_A2" parent="." instance=ExtResource("12_f3741")]
-position = Vector2(1745, -374)
+position = Vector2(1743, -373)
 scale = Vector2(8, 8)
 
 [node name="star2" parent="." instance=ExtResource("16_selq6")]

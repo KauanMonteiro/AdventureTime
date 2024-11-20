@@ -128,7 +128,9 @@ func spell_attack1() -> void:
 func die() -> void:
 	if not death:
 		death = true
-		$"../block3".queue_free()
+		if $"../block3":
+			$"../block3".queue_free()
+		GameManager.mecha_boss = true
 		_enter_state(StateMachine.DEATH)
 
 func take_damage(damage_amount: int) -> void:

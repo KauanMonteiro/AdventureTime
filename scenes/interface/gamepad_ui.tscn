@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdiw3u0vnv75x"]
+[gd_scene load_steps=24 format=3 uid="uid://bdiw3u0vnv75x"]
 
 [ext_resource type="Texture2D" uid="uid://cbs6mump6dn2c" path="res://assets/UI/gdb-xbox-2.png" id="1_lysyx"]
 [ext_resource type="Script" path="res://scripts/Interface/gamepad_ui.gd" id="3_qu1rn"]
@@ -51,21 +51,37 @@ region = Rect2(512, 32, 16, 16)
 atlas = ExtResource("1_lysyx")
 region = Rect2(528, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_54ty7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4403"]
 atlas = ExtResource("1_lysyx")
 region = Rect2(368, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cttd1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gql1r"]
 atlas = ExtResource("1_lysyx")
 region = Rect2(384, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wy2cm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2hsm"]
 atlas = ExtResource("1_lysyx")
 region = Rect2(400, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_76qc0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nop2w"]
 atlas = ExtResource("1_lysyx")
 region = Rect2(416, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjllo"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(368, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q10be"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(384, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4wxj"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(400, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi1ib"]
+atlas = ExtResource("1_lysyx")
+region = Rect2(416, 96, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mbi3"]
 animations = [{
@@ -122,16 +138,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_54ty7")
+"texture": SubResource("AtlasTexture_m4403")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cttd1")
+"texture": SubResource("AtlasTexture_gql1r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wy2cm")
+"texture": SubResource("AtlasTexture_g2hsm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_76qc0")
+"texture": SubResource("AtlasTexture_nop2w")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjllo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q10be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4wxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi1ib")
 }],
 "loop": true,
 "name": &"dash",
@@ -140,5 +173,6 @@ animations = [{
 
 [node name="Gamepad UI" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_8mbi3")
-animation = &"A"
+animation = &"attack"
+frame_progress = 0.225432
 script = ExtResource("3_qu1rn")

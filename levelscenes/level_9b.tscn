@@ -57,6 +57,10 @@ position = Vector2(1199, 217)
 position = Vector2(1256, 427)
 scale = Vector2(47.36, 1)
 
+[node name="Death block2" parent="." instance=ExtResource("5_2dtok")]
+position = Vector2(379, 286)
+scale = Vector2(47.36, 1)
+
 [node name="jumper" parent="." instance=ExtResource("6_u884n")]
 position = Vector2(1557, 336)
 speed = 500
