@@ -3,15 +3,14 @@ extends CharacterBody2D
 enum StateMachine {
 	IDLE,
 	RUN,
-	ATTACK1,  # Ataque a distância
-	ATTACK2,  # Ataque corpo-a-corpo
-	DEATH
+	ATTACK,  
+	DEATH,
+	HEAL  # Novo estado de cura
 }
 
 @export var speed := 100
-@export var dist_follow := 250
-@export var dist_attack := 450
-@export var dist_attack_melle := 30  # Distância para o ataque corpo-a-corpo
+@export var dist_follow :=450
+@export var dist_attack := 105
 
 var distance := 0.0
 
@@ -26,9 +25,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player = $"../player"
 @onready var attackarea = $attackarea  # Área de ataque para o corpo-a-corpo
 
-const ARM_scene = preload("res://scenes/enemies/arm_projectile.tscn")  # Cena do projétil de ataque a distância
-
-var attack_delay = 1.2
 var can_attack = true  # Flag para verificar se o inimigo pode atacar
 
 func _ready() -> void:
@@ -40,6 +36,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 
 	distance = global_position.distance_to(player.global_position)
+
+	# Verifica se o inimigo precisa morrer
+	if health <= 0 and state != StateMachine.DEATH:
+		_enter_state(StateMachine.DEATH)
+
+	# Verifica se o inimigo deve curar
+	if health <= 5 and state != StateMachine.HEAL and state != StateMachine.DEATH:
+		_enter_state(StateMachine.HEAL)
 
 	match state:
 		StateMachine.IDLE:
@@ -56,11 +60,9 @@ func _physics_process(delta: float) -> void:
 			if distance > dist_follow:
 				_enter_state(StateMachine.IDLE)
 			elif distance < dist_attack and can_attack:
-				_enter_state(StateMachine.ATTACK1)  # Ataque a distância
-			elif distance < dist_attack_melle and can_attack:  # Ataque corpo-a-corpo
-				_enter_state(StateMachine.ATTACK2)
+				_enter_state(StateMachine.ATTACK)
 
-		StateMachine.ATTACK2:
+		StateMachine.ATTACK:
 			_set_animation("attack")  # Animação de ataque corpo-a-corpo
 			if not animation_player.is_playing():  # Espera a animação terminar
 				var overlapping_bodies = $attackarea.get_overlapping_bodies()  # Verifica os corpos na área de ataque
@@ -69,7 +71,16 @@ func _physics_process(delta: float) -> void:
 						body.take_damage_player(1)  # Aplica dano ao jogador
 				_enter_state(StateMachine.IDLE)  # Retorna ao estado IDLE após o ataque
 
+		StateMachine.HEAL:
+			_set_animation("heal")  # Animação de cura
+			if not animation_player.is_playing():  # Espera a animação de cura terminar
+				health += 3  # Cura o inimigo
+				if health > 30:  # Limita a vida máxima
+					health = 30
+				_enter_state(StateMachine.IDLE)  # Retorna ao estado IDLE após a cura
+
 		StateMachine.DEATH:
+			_set_animation("die")  # Animação de morte
 			if not animation_player.is_playing():
 				queue_free()  # Remove o inimigo quando ele morrer
 
@@ -92,10 +103,10 @@ func _set_animation_state(new_state: StateMachine) -> void:
 			_set_animation("idler")
 		StateMachine.RUN:
 			_set_animation("run")
-		StateMachine.ATTACK1:
-			_set_animation("attack1")  # Animação de ataque a distância
-		StateMachine.ATTACK2:
-			_set_animation("attack2")  # Animação de ataque corpo-a-corpo
+		StateMachine.ATTACK:
+			_set_animation("attack")
+		StateMachine.HEAL:
+			_set_animation("heal")  # Animação de cura
 		StateMachine.DEATH:
 			_set_animation("die")
 
@@ -111,12 +122,17 @@ func _flip() -> void:
 # Função para tomar dano (do jogador)
 func take_damage(damage_amount: int) -> void:
 	health -= damage_amount
-	if health <= 0:
-		die()
+	if health <= 0 and state != StateMachine.DEATH:
+		_enter_state(StateMachine.DEATH)  # Entra no estado de morte se a vida for 0 ou menos
+
+func _on_attackarea_body_entered(body):
+	if state != StateMachine.DEATH and body is Player:
+		if body.has_method("take_damage_player"):
+			body.take_damage_player(1)
 
 # Função de morte
 func die() -> void:
 	if not death:
 		death = true
-		$"../block3".queue_free()  # Pode ser usado para remover partes ou objetos do inimigo
+		$"../block".queue_free() 
 		_enter_state(StateMachine.DEATH)
