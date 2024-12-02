@@ -52,6 +52,7 @@ func _on_fase_6b_pressed():
 	get_tree().change_scene_to_file("res://levelscenes/level_6b.tscn")
 
 func _on_fase_6c_pressed():
+	MusicManager.play_music("fase6c")
 	trasition_animation.play("trasition_out")
 	await trasition_animation.animation_finished
 	get_tree().change_scene_to_file("res://levelscenes/level_6c.tscn")

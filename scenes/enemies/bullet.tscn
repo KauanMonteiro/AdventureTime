@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk35ka524vsau"]
+
+[ext_resource type="Texture2D" uid="uid://ieybhqc237sm" path="res://assets/enemies/bullet.png" id="1_5bsge"]
+[ext_resource type="Script" path="res://scripts/enemies/bullet.gd" id="1_c0bq1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qjqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5bsge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34pd1"]
+size = Vector2(12, 10)
+
+[node name="bullet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_c0bq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1qjqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_34pd1")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

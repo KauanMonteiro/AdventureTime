@@ -87,7 +87,7 @@ func _set_animation_state(new_state: StateMachine) -> void:
 		StateMachine.ATTACK:
 			_set_animation("attack")
 			await $AnimationPlayer.animation_finished
-			die()
+			queue_free()
 		StateMachine.DEATH:
 			_set_animation("die")
 

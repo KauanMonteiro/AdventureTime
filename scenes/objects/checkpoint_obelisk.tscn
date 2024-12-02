@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6s2oo5aki4nq"]
+[gd_scene load_steps=30 format=3 uid="uid://c6s2oo5aki4nq"]
 
 [ext_resource type="Texture2D" uid="uid://br2slo6vt5nfa" path="res://assets/objects/FlyingObelisk_no_lightnings_no_letter.png" id="1_4xigl"]
+[ext_resource type="Texture2D" uid="uid://bqe3tagoky6yk" path="res://assets/objects/RedMoonTower_free_idle_animation..png" id="2_d3h1c"]
 [ext_resource type="Script" path="res://scripts/objects/checkpoint_obelisk.gd" id="2_vevkc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lg7wo"]
@@ -55,6 +56,50 @@ region = Rect2(2200, 0, 200, 400)
 atlas = ExtResource("1_4xigl")
 region = Rect2(2400, 0, 200, 400)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vt7b"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(0, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85muc"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(100, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nc0u"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(200, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sovw4"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(300, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmi2n"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(400, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28i3n"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(500, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvser"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(600, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yq5k"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(700, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wjf8"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(800, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1b74"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(900, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy4ws"]
+atlas = ExtResource("2_d3h1c")
+region = Rect2(1000, 0, 100, 140)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mnbk"]
 animations = [{
 "frames": [{
@@ -100,6 +145,44 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vt7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85muc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nc0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sovw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmi2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28i3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvser")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yq5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wjf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1b74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy4ws")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wap68"]
@@ -108,7 +191,6 @@ size = Vector2(107, 362)
 [node name="checkpointObelisk" type="AnimatedSprite2D"]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_8mnbk")
-frame_progress = 0.694568
 script = ExtResource("2_vevkc")
 
 [node name="Area2D" type="Area2D" parent="."]

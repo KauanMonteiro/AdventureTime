@@ -50,7 +50,8 @@ position = Vector2(-208, -582)
 
 [node name="key" parent="." instance=ExtResource("1_h2fdr")]
 position = Vector2(0, -3)
-frame_progress = 0.210345
+animation = &"idler"
+frame_progress = 0.0
 
 [node name="Death block" parent="." instance=ExtResource("6_pkeuc")]
 position = Vector2(-101.859, -448.538)

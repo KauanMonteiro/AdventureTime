@@ -1,5 +1,5 @@
 extends Node
-
+@export var music_boss = false
 # Lista de músicas
 var music_tracks = {
 	#LEVEL 1 AO 4
@@ -17,7 +17,8 @@ var music_tracks = {
 	#BOSS1B
 	'fase10B':"res://sound/608620_bloodpixelhero_retro-horror-loop (online-audio-converter.com).mp3",
 	#fase6C
-	'fase6c':"res://sound/ice.mp3"
+	'fase6c':"res://sound/ice.mp3",
+	'frostboss':"res://sound/frostboss.mp3"
 }
 
 # Variável para o AudioStreamPlayer

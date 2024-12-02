@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxhj5owbcmxkc"]
+
+[ext_resource type="Script" path="res://scripts/objects/musicBoss.gd" id="1_pwktv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akh3d"]
+
+[node name="musicBoss" type="Area2D"]
+script = ExtResource("1_pwktv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_akh3d")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -53,10 +53,6 @@ func _physics_process(delta: float) -> void:
 		StateMachine.ATTACK:
 			_set_animation("attack")
 			if not animation_player.is_playing():
-				var overlapping_bodies = $attackarea.get_overlapping_bodies()
-				for body in overlapping_bodies:
-					if body.has_method("take_damage_player"):
-						body.take_damage_player(1)
 				_enter_state(StateMachine.IDLE)
 
 		StateMachine.DEATH:

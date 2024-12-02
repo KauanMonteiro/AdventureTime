@@ -29,6 +29,7 @@ var mana_regeneration_timer = 0.0
 @export var spell2_cost = 2
 var is_invulnerable = false
 
+
 func _ready():
 	$hurricane_attack.visible = false
 
