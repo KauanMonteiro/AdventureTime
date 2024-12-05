@@ -18,7 +18,17 @@ var music_tracks = {
 	'fase10B':"res://sound/608620_bloodpixelhero_retro-horror-loop (online-audio-converter.com).mp3",
 	#fase6C
 	'fase6c':"res://sound/ice.mp3",
-	'frostboss':"res://sound/frostboss.mp3"
+	'frostboss':"res://sound/frostboss.mp3",
+	#FASE11A
+	'fase11a':"res://sound/646409_bloodpixelhero_adventure-theme-6 (online-audio-converter.com).mp3",
+	#FASE11B
+	'fase11b':"res://sound/2024-12-02 11-09-33 (online-audio-converter.com).mp3",
+	'final':"res://sound/2024-12-05 09-35-15 (online-audio-converter.com).mp3",
+	'demon_mage':"res://sound/2024-12-03 09-31-19 (online-audio-converter.com).mp3",
+	'DemonMorph':"res://sound/2024-12-03 09-24-18 (online-audio-converter.com).mp3",
+	'BringerOfDeath':"res://sound/2024-12-03 09-37-18 (online-audio-converter.com).mp3",
+	'demon_sword':"res://sound/2024-12-03 09-40-27 (online-audio-converter.com).mp3",
+	'UndeadExecutioner':"res://sound/2024-12-03 09-44-32 (online-audio-converter.com).mp3",
 }
 
 # Variável para o AudioStreamPlayer

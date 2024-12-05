@@ -23,7 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation_player = $AnimationPlayer
 @onready var player = $"../player"
-@onready var attackarea = $attackarea  # Área de ataque para o corpo-a-corpo
+@onready var attackarea = $attackarea/attack  # Área de ataque para o corpo-a-corpo
 
 var can_attack = true  # Flag para verificar se o inimigo pode atacar
 
@@ -82,6 +82,7 @@ func _physics_process(delta: float) -> void:
 		StateMachine.DEATH:
 			_set_animation("die")  # Animação de morte
 			if not animation_player.is_playing():
+				$"../block".queue_free()
 				queue_free()  # Remove o inimigo quando ele morrer
 
 # Função de transição entre estados
@@ -113,11 +114,13 @@ func _set_animation_state(new_state: StateMachine) -> void:
 # Lógica de flip do sprite
 func _flip() -> void:
 	if global_position.x < player.global_position.x:
-		direction = 1
 		$Sprite2D.scale.x = 1
+		$attackarea.scale.x = 1
+		direction = 1
 	elif global_position.x > player.global_position.x:
-		direction = -1
 		$Sprite2D.scale.x = -1
+		$attackarea.scale.x = -1
+		direction = -1
 
 # Função para tomar dano (do jogador)
 func take_damage(damage_amount: int) -> void:
@@ -134,5 +137,4 @@ func _on_attackarea_body_entered(body):
 func die() -> void:
 	if not death:
 		death = true
-		$"../block".queue_free() 
 		_enter_state(StateMachine.DEATH)

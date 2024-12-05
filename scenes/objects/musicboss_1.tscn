@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfbv84mmoqjps"]
+
+[ext_resource type="Script" path="res://scripts/objects/musicboss_1.gd" id="1_0560t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rdwi"]
+
+[node name="musicdemon_mage" type="Area2D"]
+script = ExtResource("1_0560t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8rdwi")
+debug_color = Color(0.949797, 1.92523e-07, 0.571738, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

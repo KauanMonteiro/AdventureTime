@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsbfrohxlvfpv"]
+
+[ext_resource type="Script" path="res://scripts/objects/music_undead_executioner.gd" id="1_7kykw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aad6"]
+
+[node name="musicUndeadExecutioner" type="Area2D"]
+script = ExtResource("1_7kykw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0aad6")
+debug_color = Color(0.413276, 0.46445, 0.998694, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

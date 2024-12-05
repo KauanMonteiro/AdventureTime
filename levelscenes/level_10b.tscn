@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bd2gqytjhkxux" path="res://scenes/enemies/boss_summon.tscn" id="3_xx0of"]
 [ext_resource type="PackedScene" uid="uid://d2xay427ln3lt" path="res://scenes/interface/mana.tscn" id="4_3n1nr"]
 [ext_resource type="PackedScene" uid="uid://bwweisq23p3u0" path="res://scenes/objects/block.tscn" id="8_d65a0"]
-[ext_resource type="PackedScene" uid="uid://cbnc6to0xtklb" path="res://scenes/objects/level_11a.tscn" id="9_gfp33"]
+[ext_resource type="PackedScene" uid="uid://5gp3o0utbd7s" path="res://scenes/objects/level_11b.tscn" id="9_75rat"]
 
 [node name="level10B" type="Node2D"]
 
@@ -56,6 +56,6 @@ position = Vector2(96, 0)
 [node name="block8" parent="block" instance=ExtResource("8_d65a0")]
 position = Vector2(112, 0)
 
-[node name="level11A" parent="." instance=ExtResource("9_gfp33")]
-position = Vector2(431, 161)
-scale = Vector2(14.8138, 1)
+[node name="level11B" parent="." instance=ExtResource("9_75rat")]
+position = Vector2(417, 164)
+scale = Vector2(14.68, 1)

@@ -146,6 +146,7 @@ func take_damage(damage_amount: int) -> void:
 func die() -> void:
 	if not death:
 		death = true
+		GameManager.UndeadExecutioner = true
 		_enter_state(StateMachine.DEATH)
 
 func _on_attackarea_body_entered(body):

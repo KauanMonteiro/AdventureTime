@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce04dc65vkhgc"]
+
+[ext_resource type="Script" path="res://scripts/objects/music_bringer_of_death.gd" id="1_was4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jeu8"]
+
+[node name="musicBringerOfDeath" type="Area2D"]
+script = ExtResource("1_was4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1jeu8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

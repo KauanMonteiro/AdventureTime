@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bofg6y26l6sd2"]
+
+[ext_resource type="FontFile" uid="uid://n3grf0cs58n8" path="res://assets/font/RevMiniPixel.ttf" id="1_8k0cd"]
+[ext_resource type="Script" path="res://scripts/Interface/final_100_porcento.gd" id="1_pr750"]
+[ext_resource type="Texture2D" uid="uid://jxxb5h8scsmp" path="res://assets/UI/GnFb-IAaPUuhKk22DuY-1-ihgn3hea-iZRxvjEeG99s.webp" id="1_s3rrd"]
+
+[node name="final100porcento" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pr750")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s3rrd")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -216.0
+offset_right = 271.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_8k0cd")
+theme_override_font_sizes/font_size = 100
+text = "recomeçar"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -11.5
+offset_right = 116.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("1_8k0cd")
+theme_override_font_sizes/font_size = 90
+text = "Parabéns por completar 100%"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

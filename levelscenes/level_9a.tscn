@@ -526,6 +526,10 @@ position = Vector2(668, -234.859)
 position = Vector2(712, -107.859)
 scale = Vector2(16.6657, 2.40053)
 
+[node name="Death block3" parent="." instance=ExtResource("11_obdfv")]
+position = Vector2(-170, 217)
+scale = Vector2(16.6657, 2.40053)
+
 [node name="Death block2" parent="." instance=ExtResource("11_obdfv")]
 position = Vector2(1734, 319)
 scale = Vector2(56.5057, 2.40053)
@@ -796,7 +800,6 @@ position = Vector2(1567, -416)
 
 [node name="Gamepad UI" parent="." instance=ExtResource("35_0r8ut")]
 position = Vector2(25, 123)
-animation = &"B"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 37.0

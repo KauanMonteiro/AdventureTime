@@ -173,6 +173,5 @@ animations = [{
 
 [node name="Gamepad UI" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_8mbi3")
-animation = &"attack"
-frame_progress = 0.225432
+animation = &"B"
 script = ExtResource("3_qu1rn")

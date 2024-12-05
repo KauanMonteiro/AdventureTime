@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://d15kabnqp7g1y"]
+[gd_scene load_steps=43 format=3 uid="uid://d15kabnqp7g1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljrgpk0r6lnf" path="res://scenes/tilemap/tile_map.tscn" id="1_2tpmm"]
-[ext_resource type="Script" path="res://scripts/level/level.gd" id="1_fx78s"]
+[ext_resource type="Script" path="res://scripts/level/level_11b.gd" id="1_tup5e"]
 [ext_resource type="PackedScene" uid="uid://dso8a0w2j8gsj" path="res://scenes/player/player.tscn" id="2_8mjia"]
 [ext_resource type="PackedScene" uid="uid://bb8b3mkr7y6bs" path="res://scenes/enemies/rogue.tscn" id="3_u7e8b"]
 [ext_resource type="Texture2D" uid="uid://bovkcyxchr736" path="res://assets/tileset/Legacy Adventure Pack - CEMETERY/Assets/Background_2.png" id="4_qvsi0"]
@@ -32,8 +32,14 @@
 [ext_resource type="PackedScene" uid="uid://b3mvuqr7gfgi2" path="res://scenes/enemies/demon_mage.tscn" id="30_hk7ig"]
 [ext_resource type="PackedScene" uid="uid://dkerq5424rkqf" path="res://scenes/enemies/bringer_of_death.tscn" id="31_2mfmj"]
 [ext_resource type="PackedScene" uid="uid://bf7rqioh2b3nh" path="res://scenes/enemies/demon_morph.tscn" id="32_cjdpe"]
-[ext_resource type="PackedScene" uid="uid://b01ch7qvcsx" path="res://scenes/enemies/mecha_golem_boss.tscn" id="33_km25m"]
 [ext_resource type="PackedScene" uid="uid://dcvcggjshcc47" path="res://scenes/enemies/npc.tscn" id="34_3tabh"]
+[ext_resource type="PackedScene" uid="uid://dfbv84mmoqjps" path="res://scenes/objects/musicboss_1.tscn" id="34_oesq3"]
+[ext_resource type="PackedScene" uid="uid://bsbfrohxlvfpv" path="res://scenes/objects/music_undead_executioner.tscn" id="35_o3bju"]
+[ext_resource type="PackedScene" uid="uid://dn12uv4b3p5ta" path="res://scenes/objects/music_demon_morph.tscn" id="36_ul7wb"]
+[ext_resource type="PackedScene" uid="uid://ce04dc65vkhgc" path="res://scenes/objects/music_bringer_of_death.tscn" id="37_4v4oh"]
+[ext_resource type="PackedScene" uid="uid://dcjnjrbarivam" path="res://scenes/objects/musicdemon_sword.tscn" id="38_o0isg"]
+[ext_resource type="PackedScene" uid="uid://begcoybv4pxxf" path="res://scenes/enemies/demon_sword_boss.tscn" id="39_g6axs"]
+[ext_resource type="PackedScene" uid="uid://c2cqrn47jv0eg" path="res://scenes/interface/transition.tscn" id="40_ljrqb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dvcf"]
 shader = ExtResource("5_d3s1b")
@@ -45,7 +51,8 @@ shader_parameter/move_speed = 0.05
 
 [node name="level11b" type="Node2D"]
 position = Vector2(-133, -262)
-script = ExtResource("1_fx78s")
+scale = Vector2(1.0096, 1.00927)
+script = ExtResource("1_tup5e")
 
 [node name="checkpointObelisk" parent="." instance=ExtResource("27_500s3")]
 position = Vector2(-5514, -2590)
@@ -86,11 +93,14 @@ position = Vector2(-161, -11)
 [node name="SecretLifeChest2" parent="." instance=ExtResource("19_5fe38")]
 position = Vector2(-2082, -555)
 
+[node name="npc" parent="." instance=ExtResource("34_3tabh")]
+position = Vector2(64, -35)
+
 [node name="upgrade chest2" parent="." instance=ExtResource("18_do3sp")]
 position = Vector2(-1410, -123)
 
 [node name="player" parent="." instance=ExtResource("2_8mjia")]
-position = Vector2(-20, -12)
+position = Vector2(-19.8091, -12.8806)
 
 [node name="rogue" parent="." instance=ExtResource("3_u7e8b")]
 position = Vector2(399, -58)
@@ -1274,13 +1284,32 @@ position = Vector2(526, -1790)
 [node name="Demon_sword16" parent="." instance=ExtResource("23_aew4d")]
 position = Vector2(6172, 368)
 
-[node name="mechaGolemBoss" parent="." instance=ExtResource("33_km25m")]
-position = Vector2(9091, -1109)
-scale = Vector2(1.5, 1.5)
-
 [node name="Death block3" parent="." instance=ExtResource("28_hcn3f")]
 position = Vector2(5188, 431)
 scale = Vector2(31.376, -0.612946)
 
-[node name="npc" parent="." instance=ExtResource("34_3tabh")]
-position = Vector2(64, -35)
+[node name="musicdemon_mage" parent="." instance=ExtResource("34_oesq3")]
+position = Vector2(-4977, 230)
+scale = Vector2(-40.6604, 0.137914)
+
+[node name="musicUndeadExecutioner" parent="." instance=ExtResource("35_o3bju")]
+position = Vector2(-5981, -2522)
+scale = Vector2(40.1845, 0.143173)
+
+[node name="musicDemonMorph" parent="." instance=ExtResource("36_ul7wb")]
+position = Vector2(7998, 547)
+scale = Vector2(35.96, -0.04)
+
+[node name="musicBringerOfDeath" parent="." instance=ExtResource("37_4v4oh")]
+position = Vector2(2133, -1900)
+scale = Vector2(43.2314, 0.256797)
+
+[node name="musicdemon_sword" parent="." instance=ExtResource("38_o0isg")]
+position = Vector2(9206, -1434)
+scale = Vector2(32.48, 0.04)
+
+[node name="Demon_swordBoss" parent="." instance=ExtResource("39_g6axs")]
+position = Vector2(9104, -1118)
+scale = Vector2(3, 3)
+
+[node name="transition" parent="." instance=ExtResource("40_ljrqb")]

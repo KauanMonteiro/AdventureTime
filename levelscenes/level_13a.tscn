@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://qb6v7n5hj0y5"]
+[gd_scene load_steps=19 format=3 uid="uid://qb6v7n5hj0y5"]
 
 [ext_resource type="PackedScene" uid="uid://bljrgpk0r6lnf" path="res://scenes/tilemap/tile_map.tscn" id="1_y1prm"]
 [ext_resource type="PackedScene" uid="uid://dd7o85m8tx6bp" path="res://scenes/objects/doorlevel_14.tscn" id="2_ghmi1"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cqmvosf0qsbdc" path="res://scenes/enemies/archer.tscn" id="12_5vatj"]
 [ext_resource type="PackedScene" uid="uid://byupqw2eifni" path="res://scenes/enemies/captain_clow.tscn" id="13_ac1f4"]
 [ext_resource type="PackedScene" uid="uid://0sgbfc8aj6rw" path="res://scenes/objects/key.tscn" id="14_ir1mv"]
+[ext_resource type="PackedScene" uid="uid://kc7gyu0jood" path="res://scenes/interface/hud.tscn" id="16_110oc"]
+[ext_resource type="PackedScene" uid="uid://dhtapy8n0modb" path="res://scenes/interface/life.tscn" id="17_600vv"]
+[ext_resource type="PackedScene" uid="uid://d2xay427ln3lt" path="res://scenes/interface/mana.tscn" id="18_hunmw"]
 
 [node name="level13a" type="Node2D"]
 
@@ -201,3 +204,9 @@ position = Vector2(1988, -31)
 
 [node name="key" parent="." instance=ExtResource("14_ir1mv")]
 position = Vector2(2045, -98)
+
+[node name="HUD" parent="." instance=ExtResource("16_110oc")]
+
+[node name="life" parent="." instance=ExtResource("17_600vv")]
+
+[node name="mana" parent="." instance=ExtResource("18_hunmw")]

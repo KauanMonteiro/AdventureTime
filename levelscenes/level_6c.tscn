@@ -133,7 +133,7 @@ position = Vector2(6281, -225)
 position = Vector2(6283, 398)
 
 [node name="player" parent="." instance=ExtResource("2_kvouo")]
-position = Vector2(-20, 149)
+position = Vector2(-23, 150)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -268,7 +268,6 @@ scale = Vector2(13.7468, 1.28339)
 [node name="Gamepad UI" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(-15, 126)
 animation = &"X"
-frame_progress = 0.0
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -3.0
@@ -283,8 +282,6 @@ text = "ataque
 
 [node name="Gamepad UI2" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(-15, 111)
-animation = &"B"
-frame_progress = 0.0
 
 [node name="Label3" type="Label" parent="."]
 offset_left = -3.0
@@ -684,7 +681,6 @@ position = Vector2(9520, 567)
 
 [node name="Gamepad UI5" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(2722, -137)
-frame_progress = 0.0
 
 [node name="SecretLifeChest2" parent="." instance=ExtResource("2_rmigo")]
 position = Vector2(9488, 757)
@@ -842,7 +838,6 @@ scale = Vector2(2.5, 2.5)
 [node name="Gamepad UI3" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(3894, 117)
 animation = &"dash"
-frame_progress = 0.0
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 3906.0
@@ -857,7 +852,6 @@ text = "dash
 
 [node name="Gamepad UI6" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(6114, -202)
-frame_progress = 0.0
 
 [node name="Label7" type="Label" parent="."]
 offset_left = 6123.0
@@ -873,7 +867,6 @@ text = "ataque especial
 
 [node name="Gamepad UI7" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(6120, 412)
-frame_progress = 0.0
 
 [node name="Label8" type="Label" parent="."]
 offset_left = 6129.0
@@ -890,7 +883,6 @@ text = "ataque especial
 [node name="Gamepad UI4" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(5221, -302)
 animation = &"dash"
-frame_progress = 0.0
 
 [node name="Label5" type="Label" parent="."]
 offset_left = 5233.0

@@ -108,11 +108,13 @@ func _on_fase_10b_pressed():
 	get_tree().change_scene_to_file("res://levelscenes/level_10b.tscn")
 
 func _on_fase_11a_pressed():
+	MusicManager.play_music("fase11a")
 	trasition_animation.play("trasition_out")
 	await trasition_animation.animation_finished
 	get_tree().change_scene_to_file("res://levelscenes/level_11a.tscn")
 
 func _on_fase_11b_pressed():
+	MusicManager.play_music("fase11b")
 	trasition_animation.play("trasition_out")
 	await trasition_animation.animation_finished
 	get_tree().change_scene_to_file("res://levelscenes/level_11b.tscn")

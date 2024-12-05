@@ -68,6 +68,7 @@ func _physics_process(delta: float) -> void:
 
 		StateMachine.DEATH:
 			if not animation_player.is_playing():
+				GameManager.DemonMorph = true
 				queue_free()
 
 func _enter_state(new_state: StateMachine) -> void:

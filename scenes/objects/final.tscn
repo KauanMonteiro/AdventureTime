@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btjcodrkmtpl2"]
+
+[ext_resource type="Script" path="res://scripts/objects/final.gd" id="1_r3mft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exdg2"]
+
+[node name="final" type="Area2D"]
+script = ExtResource("1_r3mft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_exdg2")
+debug_color = Color(0.541209, 0.406791, 1, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

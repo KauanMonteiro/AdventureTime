@@ -60,6 +60,8 @@ func _physics_process(delta: float) -> void:
 		StateMachine.DEATH:
 			if not animation_player.is_playing():
 				queue_free()
+				GameManager.rota2 = true
+				get_tree().change_scene_to_file("res://levelscenes/tela_de_encerramento_1.tscn")
 
 func _enter_state(new_state: StateMachine) -> void:
 	if state != new_state:

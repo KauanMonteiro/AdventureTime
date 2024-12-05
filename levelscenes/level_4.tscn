@@ -85,3 +85,4 @@ text = "Pule de novo com"
 
 [node name="Gamepad UI" parent="." instance=ExtResource("11_vfooa")]
 position = Vector2(337, -21)
+animation = &"A"

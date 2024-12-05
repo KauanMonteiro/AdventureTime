@@ -31,8 +31,6 @@ position = Vector2(652, -37)
 
 [node name="key" parent="." instance=ExtResource("4_w27fw")]
 position = Vector2(447, -27)
-animation = &"idler"
-frame_progress = 0.0
 
 [node name="Death block" parent="." instance=ExtResource("6_mb2qf")]
 position = Vector2(142, 66)
@@ -44,6 +42,7 @@ scale = Vector2(7.55429, -1.74747)
 
 [node name="Gamepad UI" parent="." instance=ExtResource("9_aowh0")]
 position = Vector2(96, -22)
+animation = &"A"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 104.0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcjnjrbarivam"]
+
+[ext_resource type="Script" path="res://scripts/objects/musicdemon_sword.gd" id="1_77i55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bot8"]
+
+[node name="musicdemon_sword" type="Area2D"]
+script = ExtResource("1_77i55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0bot8")
+debug_color = Color(0.763363, 0.449978, 1.92523e-06, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

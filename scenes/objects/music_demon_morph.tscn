@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn12uv4b3p5ta"]
+
+[ext_resource type="Script" path="res://scripts/objects/music_demon_morph.gd" id="1_1docm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjjyj"]
+
+[node name="musicDemonMorph" type="Area2D"]
+script = ExtResource("1_1docm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kjjyj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

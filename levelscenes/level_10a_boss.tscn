@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cbnc6to0xtklb" path="res://scenes/objects/level_11a.tscn" id="10_yp2ed"]
 
 [node name="level10aBoss" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-819.0]
 
 [node name="HUD" parent="." instance=ExtResource("1_mem1h")]
 
@@ -32,18 +33,19 @@ position = Vector2(492, -117)
 [node name="oldheroboss" parent="." instance=ExtResource("7_m8tok")]
 position = Vector2(228, -111)
 scale = Vector2(1.5, 1.5)
+health = 3
 
 [node name="level11A" parent="." instance=ExtResource("10_yp2ed")]
-position = Vector2(674, -15)
+position = Vector2(678, -20)
 scale = Vector2(1.68002, 2.64)
 
-[node name="block2" parent="." instance=ExtResource("8_5hoil")]
+[node name="block" parent="." instance=ExtResource("8_5hoil")]
 position = Vector2(646, -2)
 
-[node name="block3" parent="block2" instance=ExtResource("8_5hoil")]
+[node name="block3" parent="block" instance=ExtResource("8_5hoil")]
 position = Vector2(0, -16)
 
-[node name="block4" parent="block2" instance=ExtResource("8_5hoil")]
+[node name="block4" parent="block" instance=ExtResource("8_5hoil")]
 position = Vector2(0, -32)
 
 [node name="secretblockboss" parent="." instance=ExtResource("9_0217v")]
