@@ -23,6 +23,7 @@ var music_tracks = {
 	'fase11a':"res://sound/646409_bloodpixelhero_adventure-theme-6 (online-audio-converter.com).mp3",
 	#FASE11B
 	'fase11b':"res://sound/2024-12-02 11-09-33 (online-audio-converter.com).mp3",
+	'fase15':"res://sound/2024-12-06 08-23-21 (online-audio-converter.com).mp3",
 	'final':"res://sound/2024-12-05 09-35-15 (online-audio-converter.com).mp3",
 	'demon_mage':"res://sound/2024-12-03 09-31-19 (online-audio-converter.com).mp3",
 	'DemonMorph':"res://sound/2024-12-03 09-24-18 (online-audio-converter.com).mp3",

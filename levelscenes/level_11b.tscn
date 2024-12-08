@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d15kabnqp7g1y"]
+[gd_scene load_steps=45 format=3 uid="uid://d15kabnqp7g1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljrgpk0r6lnf" path="res://scenes/tilemap/tile_map.tscn" id="1_2tpmm"]
 [ext_resource type="Script" path="res://scripts/level/level_11b.gd" id="1_tup5e"]
@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://dcjnjrbarivam" path="res://scenes/objects/musicdemon_sword.tscn" id="38_o0isg"]
 [ext_resource type="PackedScene" uid="uid://begcoybv4pxxf" path="res://scenes/enemies/demon_sword_boss.tscn" id="39_g6axs"]
 [ext_resource type="PackedScene" uid="uid://c2cqrn47jv0eg" path="res://scenes/interface/transition.tscn" id="40_ljrqb"]
+[ext_resource type="PackedScene" uid="uid://bdiw3u0vnv75x" path="res://scenes/interface/gamepad_ui.tscn" id="41_ve65u"]
+[ext_resource type="FontFile" uid="uid://n3grf0cs58n8" path="res://assets/font/RevMiniPixel.ttf" id="42_vo3xc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dvcf"]
 shader = ExtResource("5_d3s1b")
@@ -417,6 +419,62 @@ position = Vector2(8133, 693)
 
 [node name="dublejump130" parent="." instance=ExtResource("8_m1m3q")]
 position = Vector2(8217, 718)
+
+[node name="Gamepad UI6" parent="." instance=ExtResource("41_ve65u")]
+position = Vector2(-3571.64, -740.065)
+animation = &"attack"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -3562.64
+offset_top = -746.065
+offset_right = -3350.64
+offset_bottom = -711.065
+theme_override_fonts/font = ExtResource("42_vo3xc")
+text = "ataque especial
+
+"
+
+[node name="Gamepad UI7" parent="." instance=ExtResource("41_ve65u")]
+position = Vector2(-1507.45, -156.475)
+animation = &"attack"
+
+[node name="Label8" type="Label" parent="."]
+offset_left = -1498.45
+offset_top = -162.475
+offset_right = -1286.45
+offset_bottom = -127.475
+theme_override_fonts/font = ExtResource("42_vo3xc")
+text = "ataque especial
+
+"
+
+[node name="Gamepad UI8" parent="." instance=ExtResource("41_ve65u")]
+position = Vector2(3819.41, 290.382)
+animation = &"attack"
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 3828.41
+offset_top = 284.382
+offset_right = 4040.41
+offset_bottom = 319.382
+theme_override_fonts/font = ExtResource("42_vo3xc")
+text = "ataque especial
+
+"
+
+[node name="Gamepad UI9" parent="." instance=ExtResource("41_ve65u")]
+position = Vector2(4696, -462.637)
+animation = &"attack"
+
+[node name="s" type="Label" parent="."]
+offset_left = 4705.0
+offset_top = -468.637
+offset_right = 4917.0
+offset_bottom = -433.637
+theme_override_fonts/font = ExtResource("42_vo3xc")
+text = "ataque especial
+
+"
 
 [node name="dublejump131" parent="." instance=ExtResource("8_m1m3q")]
 position = Vector2(8316, 743)

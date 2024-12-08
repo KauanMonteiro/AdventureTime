@@ -120,7 +120,6 @@ scale = Vector2(-0.706667, 1.36336)
 
 [node name="Gamepad UI" parent="." instance=ExtResource("18_1rtyp")]
 position = Vector2(74, 23)
-animation = &"B"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 86.0

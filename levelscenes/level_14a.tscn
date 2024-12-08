@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cutoh6a6sbqdc"]
+[gd_scene load_steps=20 format=3 uid="uid://cutoh6a6sbqdc"]
 
 [ext_resource type="PackedScene" uid="uid://bljrgpk0r6lnf" path="res://scenes/tilemap/tile_map.tscn" id="1_gwtmm"]
 [ext_resource type="Script" path="res://scripts/level/level.gd" id="1_tvg28"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://kc7gyu0jood" path="res://scenes/interface/hud.tscn" id="16_ifh1f"]
 [ext_resource type="PackedScene" uid="uid://dhtapy8n0modb" path="res://scenes/interface/life.tscn" id="17_i65fs"]
 [ext_resource type="PackedScene" uid="uid://d2xay427ln3lt" path="res://scenes/interface/mana.tscn" id="18_ued8v"]
+[ext_resource type="PackedScene" uid="uid://c2cqrn47jv0eg" path="res://scenes/interface/transition.tscn" id="19_aiph2"]
 
 [node name="level14a" type="Node2D"]
 script = ExtResource("1_tvg28")
@@ -93,7 +94,7 @@ position = Vector2(201, -14)
 position = Vector2(199, -85)
 
 [node name="player" parent="." instance=ExtResource("5_k2er5")]
-position = Vector2(13, -12)
+position = Vector2(9.00024, -11)
 
 [node name="Lightning Trap" parent="." instance=ExtResource("6_e36wc")]
 position = Vector2(245, -186)
@@ -204,3 +205,5 @@ animation = &"idler5"
 [node name="life" parent="." instance=ExtResource("17_i65fs")]
 
 [node name="mana" parent="." instance=ExtResource("18_ued8v")]
+
+[node name="transition" parent="." instance=ExtResource("19_aiph2")]

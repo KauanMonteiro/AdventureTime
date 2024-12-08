@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bakk8dc5f21t0"]
+[gd_scene load_steps=12 format=3 uid="uid://bakk8dc5f21t0"]
 
 [ext_resource type="Texture2D" uid="uid://0rplgqpo8gv8" path="res://assets/tileset/Sprites/11-Door/Idle.png" id="1_p1u72"]
 [ext_resource type="Texture2D" uid="uid://1t8fxfil4cvu" path="res://assets/tileset/Sprites/11-Door/Opening (46x56).png" id="2_02rtf"]
+[ext_resource type="Script" path="res://scripts/objects/doorlevel_15.gd" id="3_c42t0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsfk1"]
 atlas = ExtResource("1_p1u72")
@@ -66,6 +67,7 @@ sprite_frames = SubResource("SpriteFrames_oynof")
 animation = &"open"
 frame = 1
 frame_progress = 0.452738
+script = ExtResource("3_c42t0")
 
 [node name="Area2D" type="Area2D" parent="."]
 

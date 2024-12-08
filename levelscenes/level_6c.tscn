@@ -680,16 +680,17 @@ position = Vector2(9426, 569)
 position = Vector2(9520, 567)
 
 [node name="Gamepad UI5" parent="." instance=ExtResource("16_laau8")]
-position = Vector2(2722, -137)
+position = Vector2(2719, -129)
+animation = &"attack"
 
 [node name="SecretLifeChest2" parent="." instance=ExtResource("2_rmigo")]
 position = Vector2(9488, 757)
 
 [node name="Label6" type="Label" parent="."]
-offset_left = 2731.0
-offset_top = -143.0
-offset_right = 2943.0
-offset_bottom = -108.0
+offset_left = 2730.0
+offset_top = -137.0
+offset_right = 2942.0
+offset_bottom = -102.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.741385, 0.741385, 0.741385, 1)
 theme_override_fonts/font = ExtResource("17_s15bm")
@@ -852,6 +853,7 @@ text = "dash
 
 [node name="Gamepad UI6" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(6114, -202)
+animation = &"attack"
 
 [node name="Label7" type="Label" parent="."]
 offset_left = 6123.0
@@ -867,6 +869,7 @@ text = "ataque especial
 
 [node name="Gamepad UI7" parent="." instance=ExtResource("16_laau8")]
 position = Vector2(6120, 412)
+animation = &"attack"
 
 [node name="Label8" type="Label" parent="."]
 offset_left = 6129.0

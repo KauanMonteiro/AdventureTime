@@ -33,7 +33,6 @@ position = Vector2(492, -117)
 [node name="oldheroboss" parent="." instance=ExtResource("7_m8tok")]
 position = Vector2(228, -111)
 scale = Vector2(1.5, 1.5)
-health = 3
 
 [node name="level11A" parent="." instance=ExtResource("10_yp2ed")]
 position = Vector2(678, -20)
